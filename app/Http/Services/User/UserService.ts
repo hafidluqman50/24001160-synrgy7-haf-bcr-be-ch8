@@ -102,7 +102,7 @@ export class UserService {
     
     const generateToken = jwt.sign({
       user: getUser,
-    }, (process.env.JWT_SECRET as Secret), {
+    }, (process.env.JWT_SECRET as Secret) || 'SECRET', {
       expiresIn: 1440
     })
     
